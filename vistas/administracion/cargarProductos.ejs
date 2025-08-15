@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="/css/estiloCargarProdcuto.css">
+<section class="cargar-productos">
+    <h2 class="titulo-cargar-productos">Cargar productos</h2>
+    <article class="articulo">
+        <form class="formulario-ropa" id="formularioRopa">
+            <fieldset class="fieldsets contenedor-de-entradas-etiquetas">
+                <div class="partes-cargar-productos parte-1-cargar-productos">
+                    <label class="etiqueta" for="entradaDelNombre" >Nombre</label>
+                    <input class="entrada" type="text" name="Nombre" id="entradaDelNombre" placeholder="Remera blanca" required>
+                    <label class="etiqueta" for="entradaDelPrecio" step="1" >Precio</label>
+                    <input class="entrada" type="number" name="Precio" id="entradaDelPrecio" placeholder="5000000 (NO poner estos signos: , . $)" min="1" required> 
+                    <label class="etiqueta" for="entradaImagenes">Imagenes</label>
+                    <div id="galeriaPrevia" class="muestra-previa">
+                        <img class="imagenes-ropa" id="imagenesRopa" src="" alt="Vista previa">
+                    </div>
+                    <div class="contenedor-botones">
+                        <button class="botones" id="btnAnterior" type="button">◀</button>
+                        <button class="botones" id="btnSiguiente" type="button">▶</button>
+                    </div>
+                    <input class="entrada" type="file" name="Imagenes" id="entradaImagenes" accept="image/*" required multiple>
+                    <label class="etiqueta">Imagen principal</label>
+                    <input class="entrada" type="number" id="imagenSeleccionada" name="ImagenSeleccionada" value="0" readonly required>
+                </div>
+                <div class="partes-cargar-productos parte-2-cargar-productos">
+                    <label class="etiqueta" for="entradaDeTipo">Elegir tipo</label>
+                    <select class="entrada" name="Tipo" id="entradaDeTipo" placeholder="Remera"> 
+                        <option class="opciones-del-tipo">Remera</option>
+                        <option class="opciones-del-tipo">Saco</option>
+                        <option class="opciones-del-tipo">Poleron</option>
+                        <option class="opciones-del-tipo">Cárdigan</option>
+                        <option class="opciones-del-tipo">Campera</option>
+                        <option class="opciones-del-tipo">Suéter</option>
+                        <option class="opciones-del-tipo">Chaleco</option>
+                        <option class="opciones-del-tipo">Buzo</option>
+                        <option class="opciones-del-tipo">Pantalon</option>
+                    </select>
+                    <label class="etiqueta" for="entradaDeGenero">Genero</label>
+                    <select class="entrada" type="text" name="Genero" id="entradaDeGenero">
+                        <option class="opciones-del-tipo">Mujer</option>
+                        <option class="opciones-del-tipo">Niño/Niña</option>
+                    </select>
+                    <fieldset class="fieldsets conjunto-lista-detalles">
+                        <label class="etiqueta">Detalles</label>
+                        <section class="conjunto-completo-detalles" id="conjuntoCompletoDetalles">
+                        </section>
+                        <button class="boton" type="button" id="agregarClaseDePrenda">Agregar</button>
+                    </fieldset>
+                    <fieldset class="fieldsets conjunto-descripcion">
+                        <label class="etiqueta">Descripción</label>
+                        <textarea class="entrada entrada-descripcion" name="Descripcion"></textarea required >
+                    </fieldset>
+                    <fieldset class="fieldsets conjunto-promocion">
+                        <div class="contenedor-chekbox">
+                            <label class="etiqueta" for="entradaDePromocion" id="etiquetaDePromocion">Subir con promocion</label>
+                            <input class="entrada" type="checkbox" name="Promocion" id="entradaDePromocion" > 
+                        </div>
+                        <label class="etiqueta etiqueta-descuento" for="entradaDelDescuento" id="etiquetaDescuento">Descuento</label>
+                        <input class="entrada entrada-descuento" type="number" name="Descuento" id="entradaDelDescuento" value=""> 
+                    </fieldset>
+                    <button class="boton" id="botonSubirPrenda" type="submit">Subir prenda</button>
+                    <p class="mensaje-error" id="mensajeError"></p>
+                </div>
+            </fieldset>
+        </form>
+    </article>
+</section>
+<script src="https://unpkg.com/heic2any/dist/heic2any.min.js" defer></script>
+<script src="/js/cargarProductos.js" defer></script>

@@ -1,0 +1,147 @@
+<link rel="stylesheet" href="/css/estiloEditarProdctos.css">
+<section>
+    <h2 class="texto-centrado buscar-y-editar">Buscar y editar</h2>
+    <article>
+        <form class="formulario-busqueda" id="formularioBusqueda">
+            <fieldset class="seleccion-tipo">
+                <h3 class="texto-centrado buscar-por titulos">Buscar por</h3>
+                <ul class="lista-entradas-tipo">
+                    <li class="items-entrdas-tipo">
+                        <label class="etiqueta" >Nombre</label>
+                        <input class="entrada" type="checkbox" value="Nombre" id="entradaNombre" name="EntradaNombre" checked>
+                    </li>
+                    <li>
+                        <label class="etiqueta">Id</label>
+                        <input class="entrada" type="checkbox" value="Id" id="entradaId" name="EntradaId">
+                    </li>
+                    <li>
+                        <label class="etiqueta">Tipo</label>
+                        <input class="entrada" type="checkbox" value="Tipo" id="entradaTipo" name="EntradaTipo">
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset class="buscar">
+                <input class="entrada-busqueda" type="text" placeholder="Buscar" name="EntradaBusqueda" id="entradaBusqueda">
+                <button class="boton-busqueda">
+                    <img class="icono-lupa" src="/imagenes_carpeta/DisenoPrincipal/buscarGrisOscuro1.png">
+                </button>
+            </fieldset>
+        </form>
+    </article>
+    <article class="productos-buscados">
+        <h3 class="texto-centrado titulos">Ropa</h3>
+        <div class="contenedor-productos" id="contenedorProductos">
+        </div>
+    </article>
+    <article class="edicion" id="edicion">
+        <h3 class="texto-centrado titulos">Edición</h3>
+        <form class="formulario-edicion">
+            <fieldset class="descripcion">
+                <div class="divisor-estilo-flex">
+                    <legend class="etiqueta" id="etiquetaDePrendaSeleccionada">ID de la prenda a editar: </legend>
+                    <legend class="etiqueta" id="idDeLaPrenda">No hay ninguno seleccionado</legend>
+                </div>
+                <div class="divisor-estilo-flex">
+                    <legend class="leyenda-edicion">Estado de la ultima edición:</legend>
+                    <p class="mensaje-error" id="mensajeError"></p>
+                </div>
+            </fieldset>
+            <fieldset class="fieldsets contenedor-de-entradas-etiquetas">
+                <div class="partes-cargar-productos parte-1-cargar-productos">
+                    <label class="etiqueta" for="entradaDelNombre">Nombre</label>
+                    <input class="entrada" type="text" name="Nombre" id="entradaDelNombre" placeholder="Remera blanca">
+                    <button class="boton botones-edicion" id="cambiarNombre" type="button">Cambiar nombre</button>
+                    <label class="etiqueta" for="entradaDelPrecio">Precio</label>
+                    <input class="entrada" type="text" name="Precio" id="entradaDelPrecio" placeholder="5000000 (NO poner estos signos: , . $)">
+                    <button class="boton botones-edicion" id="cambiarPrecio" type="button">Cambiar precio</button>
+                    <fieldset class="contenedor-edicion-imagenes">
+                        <label class="etiqueta-imagenes etiqueta" id="etiquetaImagenesActual" for="entradaImagenes">Imagenes Actuales</label>
+                        <div id="galeriaActualPrevia" class="muestra-previa">
+                            <img class="imagenes-ropa" id="imagenesActualesRopa" src="" alt="Vista previa de imagenes actuales">
+                        </div> 
+                        <div class="contenedor-botones">
+                            <button class="botones" id="btnAnteriorImgActuales" type="button">◀</button>
+                            <button class="botones" id="btnSiguienteImgActuales" type="button">▶</button>
+                        </div>
+                        <div class="separador">
+                            <label class="etiqueta" for="">Imagen principal actual</label>
+                            <input class="entrada" type="number" id="imagenSeleccionadaActual" value="0" readonly>
+                            <button class="boton botones-edicion" id="cambiarImagenSeleccionada" type="button">Cambiar imagen principal</button>
+                        </div>
+                        <label class="etiqueta-imagenes etiqueta" id="etiquetaImagenesPost" for="entradaImagenes">Cargar nuevas imagenes</label>
+                        <div id="galeriaPrevia" class="muestra-previa">
+                            <img class="imagenes-ropa" id="imagenesRopa" src="" alt="Vista previa de nuevas imagenes">
+                        </div>
+                        <div class="contenedor-botones">
+                            <button class="botones" id="btnAnterior" type="button">◀</button>
+                            <button class="botones" id="btnSiguiente" type="button">▶</button>
+                        </div>
+                        <input class="entrada" type="file" name="Imagenes" id="entradaImagenes" multiple>
+                        <div class="separador">
+                            <label class="etiqueta" for="">Imagen principal</label>
+                            <input class="entrada" type="number" id="imagenSeleccionada" name="ImagenSeleccionada" value="0" readonly>
+                        </div>
+                        <button class="boton botones-edicion" id="cambiarImagen" type="button">Cambiar imagenes</button>
+                    </fieldset>
+                </div>
+                <div class="partes-cargar-productos parte-2-cargar-productos">
+                    <label class="etiqueta" for="entradaDeTipo">Elegir tipo</label>
+                    <select class="entrada" type="text" name="Tipo" id="entradaDeTipo" placeholder="Remera"> 
+                        <option class="opciones-del-tipo">Remera</option>
+                        <option class="opciones-del-tipo">Saco</option>
+                        <option class="opciones-del-tipo">Poleron</option>
+                        <option class="opciones-del-tipo">Cárdigan</option>
+                        <option class="opciones-del-tipo">Campera</option>
+                        <option class="opciones-del-tipo">Suéter</option>
+                        <option class="opciones-del-tipo">Chaleco</option>
+                        <option class="opciones-del-tipo">Buzo</option>
+                        <option class="opciones-del-tipo">Pantalon</option>
+                    </select>
+                    <button class="boton botones-edicion" id="cambiarTipo" type="button">Cambiar tipo</button>
+                    <label class="etiqueta" for="entradaDeGenero">Genero</label>
+                    <select class="entrada" type="text" name="Genero" id="entradaDeGenero">
+                        <option class="opciones-del-tipo">Mujer</option>
+                        <option class="opciones-del-tipo">Niño/Niña</option>
+                    </select>
+                    <button class="boton botones-edicion" id="cambiarGenero" type="button">Cambiar genero</button>
+                    <fieldset class="contenedor-entrada-cantidades">
+                        <label class="etiqueta">Detalles</label>
+                        <section class="conjunto-completo-detalles" id="conjuntoCompletoDetalles">
+                        </section>
+                        <section class="conjunto-completo-detalles conjunto-completo-detalles-nuevos" id="conjuntoCompletoDetallesNuevos">
+                        </section>
+                        <div class="divisor-estilo-flex">
+                            <button class="boton" type="button" id="agregarClaseDePrenda">Agregar</button>
+                            <button class="boton boton-guardar" id="botonGuardar" type="button">Guardar</button>
+                        </div>
+                        <p class="texto-rojo" id="mensajeAgregarColor"></p>
+                    </fieldset>
+                    <fieldset class="fieldsets conjunto-descripcion">
+                        <label class="etiqueta">Descripción</label>
+                        <textarea class="entrada entrada-descripcion" name="Descripcion" id="entradaDescripcion"></textarea required >
+                        <button class="boton botones-edicion" id="cambiarDescripcion" type="button">Cambiar descripcion</button>
+                    </fieldset>
+                    <fieldset class="fieldsets conjunto-promocion">
+                        <div class="contenedor-chekbox">
+                            <label class="etiqueta" for="entradaDePromocion" id="etiquetaDePromocion">Subir con promocion</label>
+                            <input class="entrada" type="checkbox" name="Promocion" id="entradaDePromocion" > 
+                        </div>
+                        <label class="etiqueta etiqueta-descuento" for="entradaDelDescuento" id="etiquetaDescuento">Descuento</label>
+                        <input class="entrada entrada-descuento" type="number" name="Descuento" id="entradaDelDescuento" value="0"> 
+                        <button class="boton botones-edicion botones-edicion" id="cambiarDescuento" type="button">Cambiar descuento</button>
+                        <input type="hidden" name="_ID" id="entradaOculta" value="">
+                        <input type="hidden" id="entradaOcultaColor" value="">
+                        <input type="hidden" id="entradaOcultaTalle" value="">
+                    </fieldset>
+                    <fieldset class="fieldsets conjunto-mostrar">
+                        <label class="etiqueta" for="entradaMostrar">Presiona el boton para cambiar el estado</label>
+                        <button class="boton" id="botonMostrar" type="button">Mostrar en la web</button>
+                        <input class="entrada" type="text" id="entradaMostrar" value="" readonly>
+                    </fieldset>
+                    <button class="boton" id="botonCancelar" type="button">Cancelar</button>
+                </div>
+            </fieldset>
+        </form>
+    </article>
+</section>
+<script src="/js/editarProductos.js" defer></script>

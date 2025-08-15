@@ -1,0 +1,391 @@
+.ver-producto {
+    width: 55%;
+    margin: auto;
+    color: var(--color-letra-principal);
+}
+
+.conedor-principal {
+    width: 100%;
+    display: flex;
+    margin-bottom: 3em;
+}
+
+.separador-contenedor-principal{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+.contenedor-producto-img{
+    width: 85%;
+}
+.contenedor-producto-detalles {
+    width: 45%;
+    height: 100%;
+}
+
+.contenedor-producto-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.seleccion-imagenes {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 2em;
+    border-radius: 5px;
+}
+.opciones-de-imagnes {
+    width: 5em;
+    background-color: #999;
+    margin: 5px 0;
+}
+
+#imagen-arriba {
+    mask-image: linear-gradient(to right, transparent, black 50%);
+    mask-image: linear-gradient(to right, transparent, black 50%);
+}
+
+#imagen-abajo {
+    mask-image: linear-gradient(to left, transparent, black 50%);
+    -webkit-mask-image: linear-gradient(to left, transparent, black 50%);
+}
+
+.imagen-producto-seccion-ver-prenda {
+    width: 22em;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 14px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+.imagen-producto-seccion-ver-prenda:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 14px 2px rgba(0, 0, 0, 0.3);
+}
+.contenedor-precio-seccion-ver-prenda {
+    display: flex;
+    flex-direction: column;
+}
+
+.precio-producto-seccion-ver-prenda,
+.precio-sin-descuento-seccion-ver-prenda {
+    display: inline-block;
+    margin: 7px 0;
+    font-weight: 500;
+}
+
+.precio-sin-descuento-seccion-ver-prenda {
+    text-decoration: line-through;
+    font-size: 0.7em;
+    font-weight: 600;
+    margin: 5px 0;
+    color: #999;
+}
+
+.texto-seccion-ver-prenda {
+    margin: 7px 0;
+}
+.texto-seccion-ver-prenda-block{
+    display: inline-block;
+    margin-left: 1em;
+}
+.lista-talles {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
+    gap: 1;
+    place-items: center;
+    justify-content: center;
+}
+
+.item-lista-talles {
+    display: flex;
+    align-items: center;
+}
+
+.talle-seccion-ver-prenda {
+    font-weight: 500;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: solid 1px var(--color-negro);
+}
+.detalles-de-la-prenda{
+    display: flex;
+}
+.checkbutton,
+.botones,
+.botones-imagenes {
+    background-color: var(--color-blanco);
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkbutton {
+    width: 2em;
+    height: 2em;
+    margin: 0 7px;
+}
+
+.botones{
+    font-size: inherit;
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.botones-imagenes {
+    font-size: inherit;
+    font-family: inherit;
+    transform: scale(1);
+    box-sizing: border-box;
+    border: none;
+    width: 10%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.botones {
+    padding: 0.5em 1em;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.botones:hover{
+    background-color: var(--color-negro-transparente-liviano);
+}
+.botones-imagenes:hover{
+    transform: scale(1.02);
+    transition: transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.contenedor-precio-calculado{
+    display: flex;
+}
+.precio-producto-seccion-ver-prenda{
+    margin-left: 10px;
+}
+.nohay{
+    width: 20px;
+}
+.caja-de-color{
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transform: scale(1);
+    box-shadow: 0 4px 14px 2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: solid 2px var(--color-negro);
+}
+.contenedor-info-a-sumar{
+    margin-top: 10px;
+    display: flex;
+    align-items: self-end;
+}
+.caja-de-color-seleccionada{
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 14px 2px rgba(0, 0, 0, 0.2);
+    transform: scale(1.04)
+}
+.texto-seccion-ver-prenda-descripcion{
+    margin-left: 0;
+}
+.imagenes-flechas{
+    width: 1em;
+    box-sizing: border-box;
+}
+.detalles-de-la-prenda{
+    margin-bottom: 10px;
+}
+.encabezado-de-tabla{
+    background: #ddd;
+}
+.tabla {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  border: none;
+}
+
+.fila {
+  display: grid;
+  grid-template-columns: 23.65625px 70.96875px repeat(6, 62.578125px);
+  align-items: center;
+}
+
+.fila.fila-encabezado .columnas {
+  font-weight: bold;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.fila:not(.encabezado):nth-child(odd) {
+    background-color: #f8f8f8;
+}
+.fila:not(.encabezado):nth-child(even) {
+    background-color: #fdfdfd;
+}
+.columnas {
+  padding: 5px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.entrada-cantidad-talles {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.previa-color {
+  width: 2.5em;
+  height: 2.5em;
+}
+.contenedor-color{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#añadirAlCarrito{
+    height: 50%;
+    margin: 0;
+    margin-left: 2em;
+}
+.texto-prendas-a-sumar{
+    display: flex;
+}
+.detalles-prendas-a-sumar{
+    margin: 0;
+    margin-right: 10px;
+    font-size: 0.9em;
+}
+.detalles-prendas-a-sumar-fijos{
+    color: #777;
+}
+@media(max-width: 1900px){
+    .ver-producto{
+        width: 60%;
+    }
+}
+@media(max-width: 1720px){
+    .ver-producto{
+        width: 65%;
+    }
+}
+@media(max-width: 1600px){
+    .ver-producto{
+        width: 75%;
+    }
+}
+@media(max-width: 1400px){
+    .ver-producto{
+        width: 85%;
+    }
+}
+@media(max-width: 1280px) {
+    .conedor-principal{
+        flex-direction: column;
+    }
+    .ver-producto{
+        width: 80%;
+    }
+    .separador-contenedor-principal{
+        width: 100%;
+        border-bottom: solid 2px var(--color-negro);
+    }
+    .contenedor-producto-detalles{
+        width: 100%;
+    }
+}
+@media(max-width: 1040px) {
+    .imagen-producto-seccion-ver-prenda{
+        width: 21em;
+    }
+}
+@media(max-width: 940px) {
+    .imagen-producto-seccion-ver-prenda{
+        width: 20em;
+    }
+    
+    .opciones-de-imagnes{
+        width: 4em;
+    }
+}
+@media(max-width: 840px) {
+    .imagen-producto-seccion-ver-prenda{
+        width: 19em;
+    }
+    .seleccion-imagenes{
+        width: 95%;
+    }
+    .opciones-de-imagnes{
+        width: 3.5em;
+    }
+}
+@media(max-width: 700px) {
+    .seleccionar-talles-colores{
+        font-size: 0.8em;
+    }
+    .entrada-cantidad-talles{
+        font-size: 0.8em;
+    }
+    .fila{
+        grid-template-columns: 18.925px 66.2375px repeat(6, 57.846875px);
+    }
+}
+@media(max-width: 600px) {
+    .fila{
+        grid-template-columns: 14.19375px 61.50625px repeat(6, 53.115625px);
+    }
+}
+@media(max-width: 500px) {
+    .seleccionar-talles-colores{
+        font-size: 0.7em;
+    }
+    .fila{
+        grid-template-columns: 14.19375px 52.04375px repeat(6, 43.653125px);
+    }
+}
+@media(max-width: 400px) {
+    .fila{
+        grid-template-columns: 14.19375px 42.58125px repeat(6, 34.190625px);
+    }
+    .nohay{
+        width: 10px;
+    }
+    .previa-color{
+        width: 1em;
+        height: 1em;
+    }
+}
+@media(max-width: 350px) {
+    .fila{
+        grid-template-columns: 14.19375px 33.11875px repeat(6, 24.728125px);
+    }
+}

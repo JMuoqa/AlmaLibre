@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/css/estiloVerPrendas.css">
+<section class="ver-prendas">
+    <h2 class="subtitulo-ver-prendas texto-centrado" id="seccionNovedades">Promociones • <%= Genero %> • <%= Tipo %></h2>
+    <% if(Prendas.length > 0) { %>
+    <section class="contenedor-productos">
+        <%  for(let i = Principio; i < Final; i++) { %>
+                <% if(i == Prendas.length){ 
+                    break;
+                } %>
+                <article class="contenedor-producto" id="<%= Prendas[i].id %>">
+                    <img src="<%= '/Imagenes/' + Prendas[i].Imagen[Prendas[i].ImagenSeleccionada] %>" class="imagen-producto" alt="<%= Prendas[i].Nombre %>" loading="lazy">
+                    <% if(Dias(Prendas[i].Publicacion)){ %> 
+                        <p class="estado-ropa">Nuevo</p>
+                    <% } %>
+                    <h3 class="titulo-producto"><%= Prendas[i].Nombre %></h3>
+                    <% 
+                        let cadenaDeTexto = FormatoDelPrecio(Prendas[i].Precio, Prendas[i].Descuento);
+                        let cadenaDeTexto2 = PrecioOrignal(Prendas[i].Precio);
+                    %>
+                    <% if(Prendas[i].Descuento>0){ %>
+                        <p class="precio-sin-descuento texto-centrado"><%= cadenaDeTexto2 %></p>
+                    <% } %>
+                    <p class="precio-producto"><%= cadenaDeTexto %></p>
+                </article>
+        <%  } %>
+    </section>
+    <aside class="controlar-indice">
+        <button class="boton-indice" id="botonDelIndiceAnterior" role="button"><img class="imagen-indice" src="/imagenes_carpeta/DisenoPrincipal/anterior.png"></button>
+        <p class="indicador-indice" id="indicadorDelIndice"></p>
+        <button class="boton-indice" id="botonDelIndiceSiguiente" role="button"><img class="imagen-indice" src="/imagenes_carpeta/DisenoPrincipal/siguiente.png"></button>
+    </aside>
+    <% } else { %>
+        <strong class="categoria-vacia texto-centrado">Aún no contamos con productos en esta categoría. ¡Estamos trabajando para ofrecerte más opciones pronto!</strong>
+    <% } %>
+</section>
+<script>
+    const cantidadDePrendas = "<%= Prendas.length %>";
+    const finalDeLCiclo = "<%= Final %>";
+    const genero = "<%= Genero %>";
+    const tipo = "<%= Tipo %>";
+</script>  
+<script src="/js/verPromos.js" defer></script>

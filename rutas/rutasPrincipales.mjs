@@ -1,0 +1,16 @@
+import controladorPrincipal  from "../controladores/controladorPrincipal.mjs";
+import express from 'express';
+const enrutador = express.Router();
+enrutador.get('/', controladorPrincipal.Inicio);
+enrutador.get('/errores', controladorPrincipal.Error);
+enrutador.get('/mi-perfil', controladorPrincipal.Autenticacion);
+enrutador.get('/registrarse', controladorPrincipal.Registrase);
+enrutador.get('/cargar-productos', controladorPrincipal.CargarProductos);
+enrutador.get('/buscar-y-editar', controladorPrincipal.BuscarYEditar);
+enrutador.get('/ver-prenda', controladorPrincipal.PrendasPorUnidad);
+enrutador.get('/ver-prendas', controladorPrincipal.VerPrendas);
+enrutador.get('/ver-promos', controladorPrincipal.VerPromos);
+enrutador.get('/previo-whatsApp', controladorPrincipal.PrevioWhatsApp);
+enrutador.get('/ayuda', controladorPrincipal.Guia);
+enrutador.get('/contacto', controladorPrincipal.Contacto);
+export default enrutador;

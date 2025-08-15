@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/css/estiloPedir.css">
+<section>
+    <h2 class="texto-centrado">Datos</h2>
+    <form class="ultimo-formulario" id="pedirPorWhatsApp">
+        <fieldset class="conjunto forma-de-entrega">
+            <article>
+                <legend class="legend">Forma de entrega</legend>
+                <div>
+                    <label class="etiqueta" for="local">Retiro en el local</label>
+                    <input class="entrada" type="radio" name="Entrega" id="local" value="Retiro en el local">
+                </div>
+                <div>
+                    <label class="etiqueta" for="casa">Recibir en mi domicilio</label>
+                    <input class="entrada" type="radio" name="Entrega" id="casa" value="Recibir en mi domicilio">
+                </div>
+            </article>
+            <article>
+                <legend class="legend">Forma de pago</legend>
+                <div>
+                    <label class="etiqueta" for="efectivo">Pago con efectivo</label>
+                    <input class="entrada" type="radio" name="Pago" id="efectivo" value="Efectivo">
+                </div>
+                <div>
+                    <label class="etiqueta" for="transferencia">Pago con transferencia</label>
+                    <input class="entrada" type="radio" name="Pago" id="transferencia" value="Transferencia">
+                </div>
+            </article>
+        </fieldset>
+        <fieldset class="conjunto datos-del-cliente">
+            <label class="etiqueta" for="entradaNombre">Nombre: </label>
+            <input class="entrada" type="text" Name="Nombre" id="entradaNombre" placeholder="Gaston" required>  
+            <label class="etiqueta" id="etiquetaDireccion" for="entradaDireccion">Dirección de mi casa:</label>
+            <input class="entrada" type="text" Name="Direccion" id="entradaDireccion" placeholder="Te informaremos el costo de entrega por WhatsApp." re>  
+            <button class="boton" type="submit">Pedir por WhatsApp</button>
+        </fieldset>
+    </form>
+</section>
+<script src="/js/pedir.js" defer></script>

@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alma Libre</title>
+    <link rel="icon" href="/imagenes_carpeta/DisenoPrincipal/IconoAlmaLibre2.png" type="image/png">
+    <link rel="stylesheet" href="/css/estiloGlobal.css">
+    <link rel="stylesheet" href="/css/fuentes.css">
+    <link rel="stylesheet" href="/css/estiloPrincipal.css">
+</head>
+<!--TENGO QUE ACTUALIZAR TEL1 Y TEL2-->
+<body id="body">
+    <%  if(Aviso != ''){ %>
+        <dialog class="aviso" id="aviso">
+            <div class="acomodar-articulo">
+                <article class="menu-terceario">
+                    <img class="cerrar-menu" id="cerrarMenu2" src="/imagenes_carpeta/DisenoPrincipal/cerrar.png" loading="lazy">
+                    <h2 class="titutlo-mensaje-exitoso"><%= Aviso %></h2>
+                    <a class="item-lista-menu-secundario link-lista-menu-secundario" href="/">Inicio</a>
+                    <a class="item-lista-menu-secundario link-lista-menu-secundario" href="<%= UrlMiPerfil %>">Mi cuenta</a>
+                </article>
+            </div>
+        </dialog> <%
+    } %>
+    <dialog class="contenedor-menu-secundario cursor-puntero" id="contenedorMenuSecundario">
+        <section class="menu-secundario" id="menuSecundario">
+            <img class="cerrar-menu" id="cerrarMenu" src="/imagenes_carpeta/DisenoPrincipal/cerrar.png" loading="lazy">
+            <h2 class="titulo-menu-secundario">Menú</h2>
+            <ul class="lista-menu-secundario">
+                <% if(Jerarquia == 0){ %>
+                <li class="item-lista-menu-secundario">
+                    <a class="link-lista-menu-secundario" href="<%= UrlCargarProductos %>">Cargar productos</a>
+                </li>
+                <div class="divisor-navegador-gris-visible"></div>
+                <li class="item-lista-menu-secundario">
+                    <a class="link-lista-menu-secundario" href="<%= UrlBuscarYEditar %>">Buscar y editar</a>
+                </li>
+                <div class="divisor-navegador-gris-visible"></div>
+                <% } %>
+                <li class="item-lista-menu-secundario">
+                    <a class="link-lista-menu-secundario" href="/">Mi carrito.</a>
+                </li>
+                <div class="divisor-navegador-gris-visible"></div>
+            </ul>
+        </section>
+    </dialog>
+    <dialog class="carrito-prendas cursor-puntero" id="carritoDePrendas">
+        <section class="prendas-seleccionadas" id="prendasSeleccionadas">
+            <img class="cerrar-menu menu-derecha" id="cerrarMenuDelCarrito" src="/imagenes_carpeta/DisenoPrincipal/cerrar.png">
+            <h2 class="titulo-menu-secundario">Carrito</h2>
+            <section class="contenedor-prendas-carrito">
+                <ul class="lista-menu-secundario" id="listadoDeMiCarrito">
+                </ul>
+            </section>
+            <section class="contenedor-detalles">
+                <article class="precio-cantidad">
+                    <p class="detalles-del-carrito">Cantidad total:</p>
+                    <p class="detalles-del-carrito valores-detalles-del-carrito" id="detallesCantidadTotal">1</p>
+                </article>
+                <article class="precio-cantidad">
+                    <p class="detalles-del-carrito">Precio total:</p>
+                    <p class="detalles-del-carrito valores-detalles-del-carrito" id="detallesPrecioTotal">1</p>
+                </article>
+                <article class="precio-cantidad pedir-borrar">
+                    <button class="boton-detalles-del-carrito" id="botonIrAPedir">Pedir</button>
+                    <button class="boton-detalles-del-carrito" id="vaciarCarrito">Vaciar carrito</button>
+                </article>
+                <p class="texto-verde texto-centrado" id="avisoPedido"></p>
+            </section>
+        </section>
+    </dialog>
+    <header class="encabezado">
+        <img class="imagen-menu-secundario" src="/imagenes_carpeta/DisenoPrincipal/menuIzq2.png" id="imagenMenuSecundario">
+        <nav class="navegador" id="navegador">
+            <h1 class="titulo" id="titulo" >Alma libre</h1> 
+            <ul class="lista-navegador" id="listaDelNavegador">
+                <li class="items-lista-navegador">
+                    <a class="links links-lista-navegador cursor-puntero">Mujer</a>
+                    <ul class="sublista lista-mujer">
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Mujer&tipo=Remera#MujerRemera">Remeras</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Mujer&tipo=Saco#MujerSaco">Sacos</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Mujer&tipo=Poleron#MujerPoleron">Polerón</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Mujer&tipo=Cárdigan#MujerCárdigan">Cárdigan</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Mujer&tipo=Campera#MujerCampera">Camperas</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Mujer&tipo=Suéter#MujerSuéter">Suéters</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Mujer&tipo=Chaleco#MujerChaleco">Chalecos</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Mujer&tipo=Buzo#MujerBuzo">Buzos</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Mujer&tipo=Pantalon#MujerPantalon">Pantalones</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Mujer&tipo=Ver-todo#MujerVer-todo">Ver todo</a>
+                        </li>
+                    </ul>
+                </li>
+                <div class="divisor-navegador-gris"></div>
+                <li class="items-lista-navegador">
+                    <a class="links links-lista-navegador cursor-puntero">Niños/as</a>
+                    <ul class="sublista lista-mujer">
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Niño/Niña&tipo=Remera#NiñoNiñaRemera">Remeras</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Niño/Niña&tipo=Saco#NiñoNiñaSaco">Sacos</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Niño/Niña&tipo=Poleron#NiñoNiñaPoleron">Poleron</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Niño/Niña&tipo=Cárdigan#NiñoNiñaCárdigan">Cárdigan</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Niño/Niña&tipo=Campera#NiñoNiñaCampera">Camperas</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Niño/Niña&tipo=Suéter#NiñoNiñaSuéter">Suéters</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Niño/Niña&tipo=Chaleco#NiñoNiñaChaleco">Chalecos</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Niño/Niña&tipo=Buzo#NiñoNiñaBuzo">Buzos</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Niño/Niña&tipo=Pantalon#NiñoNiñaPantalon">Pantalones</a>
+                        </li>
+                        <li class="subitem items-lista-mujer">
+                            <a class="links sublinks links-lista-mujer" href="/ver-prendas/?genero=Niño/Niña&tipo=Ver-todo#NiñoNiñaVer-todo">Ver todo</a>
+                        </li>
+                    </ul>
+                </li>
+                <div class="divisor-navegador-gris"></div>
+                <li class="items-lista-navegador">
+                    <a class="links links-lista-navegador" href="/ayuda">Ayuda</a>
+                </li>
+                <div class="divisor-navegador-gris"></div>
+                <li class="items-lista-navegador">
+                    <a class="links links-lista-navegador" href="/contacto">Contáctanos</a>
+                </li>
+                <div class="divisor-navegador-gris"></div>
+                <li class="items-lista-navegador">
+                    <a class="links links-lista-navegador" href="<%= UrlMiPerfil %>">Mi perfil</a>
+                </li>
+                <div class="divisor-navegador-gris"></div>
+            </ul>
+        </nav>
+        <% if(ControlDelUsuario(Usuario)) { %> 
+            <img class="imagen-iniciar-sesion" id="imagenIniciarSesion" src="/imagenes_carpeta/DisenoPrincipal/IniciarSesion2.png">
+        <% } else{ %>
+            <img class="imagen-iniciar-sesion" id="imagenSalir" src="/imagenes_carpeta/DisenoPrincipal/exit.png">
+            <p class="saludo">Hola <%= Usuario %>!</p>
+        <% } %>
+        <div class="contenedor-carrito">
+            <p class="numero-items" id="cantidadDePrendasEnElCarrito"><%= Carrito.length %></p>
+            <img class="imagen-carrito" id="imagenCarrito" src="/imagenes_carpeta/DisenoPrincipal/carritoCalidad2.png">
+        </div>
+    </header>
+    <main>
+        <%- body %>
+    </main>
+    <footer class="pie-de-pagina">
+        <p class="derechos-pie-de-pagina"> © 2025 Alma Libre. Todos los derechos reservados </p>
+        <section class="contendero-pie-de-pagina">
+            <article class="articulos-pie-de-pagina nosotros-pie-de-pagina">
+                <h3 class="texto-pie-de-pagina">NOSOTROS</h3>
+                <ul class="lista-pie-de-pagina">
+                    <li class="items-pie-de-pagina">
+                        <p class="texto-pie-de-pagina">Dirección: Calles Richarzon y esquina Antártida. Barrio Villa Adela</p>
+                    </li>
+                    <li class="items-pie-de-pagina">
+                        <p class="texto-pie-de-pagina">Tel 1: <%= TEL1 %></p>
+                    </li >
+                    <li class="items-pie-de-pagina">
+                        <p class="texto-pie-de-pagina">Tel 2: <%= TEL2 %></p>
+                    </li>
+                </ul>
+            </article>
+            <article class="articulos-pie-de-pagina horarios-pie-de-pagina">
+                <h3 class="texto-pie-de-pagina">HORARIOS</h3>
+                <ul class="lista-pie-de-pagina">
+                    <li class="items-pie-de-pagina">
+                        <a class="texto-pie-de-pagina links" href="">Lunes-Viernes: 10:00 - 20:00</a>
+                    </li>
+                    <li class="items-pie-de-pagina">
+                        <a class="texto-pie-de-pagina links" href="">Sábados: 10:00 - 13:00</a>
+                    </li>
+                </ul>
+            </article>
+            <aside class="articulos-pie-de-pagina ayuda-pie-de-pagina">
+                <h3 class="texto-pie-de-pagina">AYUDA</h3>
+                <ul class="lista-pie-de-pagina">
+                    <li class="items-pie-de-pagina">
+                        <a class="texto-pie-de-pagina links" href="/ayuda">¿Cómo comprar?</a>
+                    </li>
+                    <li class="items-pie-de-pagina">
+                        <a class="texto-pie-de-pagina links" href="/contacto">Contacto</a>
+                    </li>
+                    <li class="items-pie-de-pagina">
+                        <a class="texto-pie-de-pagina links" href="/ayuda#retiro">¿Formas de retirar mi pedido?</a>
+                    </li>
+                </ul>
+            </aside>
+            <aside class="articulos-pie-de-pagina">
+                <h3 class="texto-pie-de-pagina">SEGUINOS EN</h3>
+                <ul class="lista-pie-de-pagina">
+                    <li class="items-pie-de-pagina">
+                        <a class="texto-pie-de-pagina links" href="https://www.instagram.com/alma_libre54/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    </li>
+                </ul>
+            </aside>
+        </section>
+            <a class="link-lista-menu-secundario web-muoqa" id="muoqa" href="https://muoqa.com" target="_blank" rel="noopener noreferrer">Diseñado y desarrollado por MUOQA</a>
+    </footer>
+    <script>
+        const url = '<%= Url %>';
+        const miPerfil = '<%= UrlMiPerfil %>';
+        const dialog = '<%= Dialog %>';
+        const cargarProductos = '<%= UrlCargarProductos %>'
+    </script>
+    <script src="/js/principal.js" defer></script>
+</body>
+</html>

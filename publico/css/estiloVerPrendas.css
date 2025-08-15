@@ -1,0 +1,71 @@
+.ver-prendas{
+    width: var(--ancho-contenido-visible);
+    margin: auto;
+}
+.subtitulo-ver-prendas{
+    font-weight: 600;
+    width: 100%;
+}
+.categoria-vacia{
+    font-weight: 500;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+.ver-mas{
+    width: var(--ancho-contenido-visible);
+    margin: auto;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    position: relative;
+    padding: 1em;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: var(--color-fondo-principal-transparente);
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 12px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+.contenedor-producto-ver-mas{
+    height: 34em;
+    width: 18em;
+    font-size: .8em;
+    position: relative;
+}
+.imagen-promociones{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.imagen-promociones::before{
+    content: "";
+    background: url("/imagenes_carpeta/DisenoPrincipal/imagenSecundario.jpeg") fixed no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    inset: 0;
+    z-index:-10;
+}
+@media(max-width: 1280px){
+    .ver-mas{
+        padding: 0.5em;
+    }
+}
+@media(max-width: 1024px){
+    .contenedor-producto-ver-mas {
+        font-size: 0.6em;
+        margin-bottom: 0.8em;
+    }
+}
+@media(max-width: 853px){
+    .contenedor-producto-ver-mas {
+        font-size: 0.8em;
+    }
+}
+@media(max-width: 540px){
+    .contenedor-producto-ver-mas {
+        font-size: 0.6em;
+    }
+}

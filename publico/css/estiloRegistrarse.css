@@ -1,0 +1,41 @@
+.titulo-registrarse {
+    width: 100%;
+    text-align: center;
+}
+.contenedor-formulario {
+    width: 70%;
+    margin: auto;
+}
+.contenedor-etiquetas-entradas {
+    width: 100%;
+    border-radius: 5px;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.etiqueta,
+.entrada {
+    margin: 0.4em 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+.boton-registrarse {
+    font-size: inherit;
+    font-family: inherit;
+    margin-top: 1em;
+    cursor: pointer;
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    padding: 0.5em 1em;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.boton-registrarse:hover {
+    font-weight: 600;
+}
+.textor-errores {
+    color: var(--color-rojo);
+}

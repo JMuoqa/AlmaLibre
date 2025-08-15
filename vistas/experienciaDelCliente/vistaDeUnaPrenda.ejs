@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/css/estiloVerPrenda.css">
+<section class="ver-producto">
+    <h2 class="texto-centrado">Ver prenda</h2>
+    <section class="conedor-principal">
+        <div class="separador-contenedor-principal">
+            <section class="contenedor-producto-img">
+                <img src="" id="imagenActual" class="imagen-producto-seccion-ver-prenda">
+            </section>
+            <% if(DatosDeLaPrenda[0].Imagen.length>1){ %> 
+                <section class="seleccion-imagenes" id="seleccionImagenes">
+                    <button class="botones-imagenes" id="botonArriba"><img class="imagenes-flechas" src="/imagenes_carpeta/DisenoPrincipal/icons8/icons8-arrow-50.png"></button>
+                    <img class="opciones-de-imagnes" src="" id="imagen-arriba">
+                    <img class="opciones-de-imagnes" src="" id="imagen-medio">
+                    <img class="opciones-de-imagnes" src="" id="imagen-abajo">
+                    <button class="botones-imagenes" id="botonAbajo"><img class="imagenes-flechas" src="/imagenes_carpeta/DisenoPrincipal/icons8/icons8-arrow-50-2.png"></button>
+                </section>
+            <% } %>
+        </div>
+            <% 
+                let precioConDescento = FormatoDelPrecio(DatosDeLaPrenda[0].Precio, DatosDeLaPrenda[0].Descuento);
+                let Precio = PrecioOrignal(DatosDeLaPrenda[0].Precio);
+            %>
+        <section class="contenedor-producto-detalles">
+            <h3 class="texto-seccion-ver-prenda"><%= DatosDeLaPrenda[0].Nombre %></h3>
+            <section class="contenedor-precio-seccion-ver-prenda">
+                <% if(DatosDeLaPrenda[0].Descuento>0){ %>
+                    <p class="precio-sin-descuento-seccion-ver-prenda">Precio: <%= Precio %></p>
+                <% } %>
+                <div class="contenedor-precio-calculado">
+                    <h4 class="texto-seccion-ver-prenda">Precio:</h4>
+                    <p class="precio-producto-seccion-ver-prenda"><%= precioConDescento %></p>
+                </div>
+            </section>
+            <section>
+                <h4 class="texto-seccion-ver-prenda">Descripción</h4>
+                <p class="texto-seccion-ver-prenda texto-seccion-ver-prenda-block texto-seccion-ver-prenda-descripcion"> <%= DatosDeLaPrenda[0].Descripcion %></p>
+            </section>
+            <section class="detalles-de-la-prenda">
+                <h4 class="texto-seccion-ver-prenda">Categoría:</h4>
+                <p class="texto-seccion-ver-prenda texto-seccion-ver-prenda-block"><%= DatosDeLaPrenda[0].Tipo %> | <%= DatosDeLaPrenda[0].Genero %></p>
+            </section>
+            <input type="hidden" id="idDeLaPrenda" value="<%= DatosDeLaPrenda[0].id %>">
+            <input type="hidden" id="nombreDeLaPrenda" value="<%= DatosDeLaPrenda[0].Nombre %>">
+            <input type="hidden" id="precioDeLaPrenda" value="<%= DatosDeLaPrenda[0].Precio - (DatosDeLaPrenda[0].Precio * DatosDeLaPrenda[0].Descuento) / 100 %>">
+            <input type="hidden" id="imagenDeLaPrenda" value="<%= DatosDeLaPrenda[0].Imagen %>">
+            <input type="hidden" id="imagenSeleccionadaDeLaPrenda" value="<%= DatosDeLaPrenda[0].ImagenSeleccionada %>">
+            <section class="seleccionar-talles-colores">
+              <div class="tabla" id="tabla">
+                <div class="fila fila-encabezado" id="filaEncabezado">
+                    <div class="columnas">#</div>
+                    <div class="columnas">Color</div>
+                </div>
+              </div>
+            </section>
+            <section class="contenedor-info-a-sumar">
+                <div class="contenedor-prendas-a-sumar">
+                    <div class="texto-prendas-a-sumar prendas-a-sumar"><p class="detalles-prendas-a-sumar detalles-prendas-a-sumar-fijos">Prendas: </p><p class="detalles-prendas-a-sumar" id="PrendasASumar">0</p></div>
+                    <div class="texto-prendas-a-sumar precio-de-prendas-a-sumar"><p class="detalles-prendas-a-sumar detalles-prendas-a-sumar-fijos">Precio: </p><p class="detalles-prendas-a-sumar" id="precioDePrendasASumar">$0,00</p></div>
+                </div>
+                <button class="botones" id="añadirAlCarrito">Añadir al carrito</button>
+            </section>
+            <p id="textoDeErrores"></p>
+        </section>
+    </section>
+</section>
+<script>
+    const listaDeImagenes = JSON.parse('<%- JSON.stringify(DatosDeLaPrenda[0].Imagen) %>'); // Esto sirve para pasar un arreglo del frontend al backend;
+    const listaDeColores = JSON.parse('<%- JSON.stringify(ColoresSeleccionados) %>');
+    const listaDePrendas = JSON.parse('<%- JSON.stringify(DatosDeLaPrenda[0]) %>');
+    const imagenSeleccionada = '<%= DatosDeLaPrenda[0].ImagenSeleccionada %>';
+    const listaDeTalles = JSON.parse('<%- JSON.stringify(TallesSeleccionados) %>');
+</script>
+<script src="/js/verPrenda.js" defer></script>

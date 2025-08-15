@@ -1,0 +1,54 @@
+<% if(ControlDelUsuario(Usuario)) { %>
+    <link rel="stylesheet" href="/css/estiloAutenticacion.css">
+    <section class="iniciar-sesion">
+        <h2 class="titulo-mi-perfil">Mi perfil</h2>
+        <div class="contenedor-contenedor">
+            <article class="contenedor-ir-a-registrarse">
+                <h3 class="titulo-autenticacion">¿No tienes cuenta?</h3>
+                <p class="razon-cuenta">
+                    Crear una cuenta en nuestra tienda te permitirá disfrutar de una mejor experiencia de compra.
+                    Al guardar tus datos, podrás agilizar futuros pedidos de forma rápida y segura.
+                </p>
+                <a class="ir-a-registrarme" href="<%= UrlRegistrarse %>">Crear una cuenta</a>
+            </article>
+            <article class="contenedor-formulario">
+                <h3 class="titulo-autenticacion">Iniciar sesión</h3>
+                <form class="formulario formulario-iniciar-sesion" id="formularioParaIniciarSesion">
+                    <fieldset class="contenedor-etiquetas-entradas">
+                        <label class="etiquetas">Usuario</label>
+                        <input class="entrada entrada-usuario" type="text" name="Usuario">
+                        <label class="etiquetas">Contraseña</label>
+                        <input class="entrada entrada-contraseña" type="password" name="Contraseña">
+                        <button class="enviar-inicio" id="enviarInicio" type="submit">Iniciar sesion</button>
+                        <p class="mensaje-error" id="mensajeError"></p>
+                    </fieldset>
+                </form>
+            </article>
+        </div>
+    </section>
+    <script src="/js/autenticacion.js" defer></script>
+<% } else { %>
+    <link rel="stylesheet" href="/css/estiloMiPerfil.css">
+    <section class="mi-perfil">
+        <h2 class="titulo-mi-perfil">Mi perfil</h2>
+        <form class="formulario-mi-perfil" id="formularioMiPerfil">
+            <fieldset class="contenedor-etiquetas-entradas">
+                <% if(DatosDeMiPerfil == null){  %> 
+                    <p class="texto-aviso">Hay algun error que impide cargar los datos de tu perfil.</p>
+                <% } else { %>
+                    <label class="etiqueta">Nombre de usuario</label>
+                    <input class="entrada" type="text" id="entradaUsusario" value="<%= DatosDeMiPerfil.NombreDeUsuario %>">
+                    <button class="boton" id="cambiarNombreDeUsuario">Cambiar nombre de usuario</button>
+                    <label class="etiqueta">Email</label>
+                    <input class="entrada" type="email" id="entradaEmail" value="<%= DatosDeMiPerfil.Mail %>">
+                    <button class="boton" id="cambiarEmail">Cambiar email</button>
+                    <label class="etiqueta">Direccion</label>
+                    <input class="entrada" type="text" id="entradaDirrecion" value="<%= DatosDeMiPerfil.DireccionDeMiCasa %>">
+                    <button class="boton" id="cambiarDireccionDeTuCasa">Cambiar direccion de tu casa</button>
+                    <p class="mensaje-error" id="mensajeError2"></p>
+                <% } %>
+            </fieldset>
+        </form>
+    </section>
+    <script src="/js/miPerfil.js" defer></script>
+<% } %>

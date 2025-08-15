@@ -1,0 +1,190 @@
+fieldset {
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.fieldsets {
+    margin: 0;
+    border-radius: 5px;
+    padding: 0;
+}
+.titulo-cargar-productos {
+    width: 100%;
+    text-align: center;
+}
+.articulo {
+    width: var(--ancho-contenido-visible);
+    margin: auto;
+}
+.contenedor-de-entradas-etiquetas {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.partes-cargar-productos {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    box-sizing: border-box;
+}
+.conjunto-promocion {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.etiqueta,
+.entrada {
+    margin: 0.4em 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+.muestra-previa {
+    width: 18em;
+    height: 18em;
+    background-color: #ddd;
+}
+
+.contenedor-botones {
+    width: 18em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagenes-ropa {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.boton,
+.botones {
+    font-size: inherit;
+    font-family: inherit;
+    background-color: var(--color-blanco);
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 0.5em 1em;
+}
+
+.boton {
+    margin-top: 1em;
+    color: var(--color-negro);
+}
+
+.boton:hover {
+    background-color: var(--color-negro-transparente-liviano);
+}
+
+.botones {
+    margin-top: 10px;
+}
+
+.botones:hover {
+    background-color: var(--color-negro-transparente-liviano);
+}
+.contenedor-entrada-cantidades{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.detalles-de-talles{
+    display: flex;
+}
+.conjunto-lista-detalles{
+    padding: 5px;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+}
+.conjunto-descripcion{
+    padding: 5px;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.entrada-cantidad{
+    width: 4em;
+}
+.conjunto-completo-detalles{
+    width: 100%;
+}
+.conjunto-entradas-detalles{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.entrada-descripcion{
+    height: 5em;
+    font-size: inherit;
+    resize: none;
+}
+.boton-detalles{
+    font-size: inherit;
+    font-family: inherit;
+    background-color: var(--color-blanco);
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.boton-detalles:hover{
+    background-color: var(--color-negro-transparente-liviano);
+}
+.boton-copiar-color{
+    font-size: inherit;
+    font-family: inherit;
+    background-color: var(--color-blanco);
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.boton-copiar-color:hover{
+    background-color: var(--color-negro-transparente-liviano);
+}
+#entradaDePromocion{
+    margin-left: 5px;
+}
+@media(max-width: 853px){
+    .articulo{
+        font-size: 0.8em;
+    }
+    .muestra-previa {
+        width: 15em;
+        height: 15em;
+        background-color: #ddd;
+    }
+    .contenedor-botones{
+        width: 15em;
+    }
+}
+@media(max-width: 540px){
+    .articulo{
+        font-size: 0.65em;
+    }
+}
+@media(max-width: 430px){
+    .articulo{
+        font-size: 0.8em;
+    }
+    .contenedor-de-entradas-etiquetas{
+        flex-direction: column;
+    }
+    .partes-cargar-productos{
+        width: 100%;
+    }
+    #entradaDeGenero{
+        margin-bottom: 1em;
+    }
+}

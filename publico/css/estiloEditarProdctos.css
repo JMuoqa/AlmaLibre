@@ -1,0 +1,350 @@
+fieldset {
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.fieldsets {
+    margin: 0;
+    border-radius: 5px;
+    padding: 0;
+}
+.buscar,
+.seleccion-tipo {
+    margin: auto;
+    border: none;
+}
+.buscar {
+    width: 30%;
+    display: flex;
+    margin-bottom: 1em;
+}
+.entrada-busqueda {
+    width: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    border: solid 1px var(--color-negro);
+    border-radius: 50px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.boton-busqueda {
+    width: 10%;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px var(--color-negro);
+    border-left: none;
+    border-radius: 50px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.icono-lupa {
+    width: 50%;
+}
+.lista-entradas-tipo {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+.buscar-por {
+    margin: 10px 0;
+}
+.productos-buscados,
+.edicion {
+    border-top: solid 1px var(--color-negro);
+}
+/* Formulario de edición */
+.formulario-edicion {
+    width: var(--ancho-contenido-visible);
+    margin: auto;
+}
+.contenedor-de-entradas-etiquetas {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+.partes-cargar-productos {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.conjunto-promocion {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.mensaje-error{
+    margin: 0.4em 0;
+    margin-left: 10px;
+}
+.etiqueta,
+.entrada {
+    margin: 0.4em 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+.entrada {
+    color: var(--color-naranja);
+}
+.contenedor-listas-talles {
+    display: flex;
+}
+.lista-talles {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.5em 0;
+    width: 50%;
+}
+.etiqueta-talles {
+    display: inline-block;
+    margin: 0;
+    width: 2.5em;
+}
+.muestra-previa {
+    width: 18em;
+    height: 18em;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+.contenedor-botones {
+    width: 18em;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.imagenes-ropa {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.boton,
+.botones {
+    font-size: inherit;
+    font-family: inherit;
+    background-color: var(--color-blanco);
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.boton {
+    margin-top: 1em;
+    padding: 0.5em 1em;
+    border: solid 2px var(--color-negro);
+    color: var(--color-negro);
+    transition: background-color 0.3s ease;
+}
+.boton:hover {
+    background-color: var(--color-negro-transparente-liviano);
+}
+.botones {
+    padding: 0.5em 1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+.botones:hover {
+    background-color: var(--color-negro-transparente-liviano);
+}
+.botones-edicion {
+    width: 40%;
+}
+.contenedor-edicion-imagenes {
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.descripcion {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+#idDeLaPrenda {
+    color: var(--color-naranja);
+}
+#botonVendido{
+    color: var(--color-rojo);
+}
+.conjunto-talles{
+    margin-top: 1em;
+}
+.contenedor-productos{
+    width: var(--ancho-contenido-visible);
+    margin: auto;
+}
+.conjunto-cantidades{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+.etiqueta-cantidades{
+    margin: 0 1em 0 0; 
+}
+.entrada-cantidad{
+    width: 4em;
+    margin-right: 1em;
+}
+.separador {
+    display: flex;
+    flex-direction: column;
+}
+.conjunto-mostrar {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.leyenda-edicion{
+    margin: 0.4em 0;
+}
+.detalles-de-talles{
+    display: flex;
+}
+.conjunto-lista-detalles{
+    padding: 5px;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+}
+.conjunto-descripcion{
+    padding: 5px;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.entrada-cantidad{
+    width: 4em;
+}
+.entrada-cantidad-nuevo{
+    width: 4em;
+}
+.conjunto-completo-detalles{
+    width: 100%;
+}
+.conjunto-entradas-detalles{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.entrada-descripcion{
+    height: 5em;
+    font-size: inherit;
+    resize: none;
+}
+.boton-detalles{
+    font-size: inherit;
+    font-family: inherit;
+    background-color: var(--color-blanco);
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.boton-detalles:hover{
+    background-color: var(--color-negro-transparente-liviano);
+}
+.boton-copiar-color{
+    font-size: inherit;
+    font-family: inherit;
+    background-color: var(--color-blanco);
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.boton-copiar-color:hover{
+    background-color: var(--color-negro-transparente-liviano);
+}
+.boton-guardar{
+    font-size: inherit;
+    font-family: inherit;
+    background-color: var(--color-blanco);
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+}
+.boton-guardar:hover{
+    background-color: var(--color-negro-transparente-liviano);
+}
+.boton-cambiar-cantidad{
+    font-size: inherit;
+    font-family: inherit;
+    background-color: var(--color-blanco);
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    margin-left: 10px;
+}
+.boton-cambiar-cantidad:hover{
+    background-color: var(--color-negro-transparente-liviano);
+}
+#entradaDePromocion{
+    margin-left: 5px;
+}
+.contenedor-entrada-cantidades{
+    padding: 5px;
+    box-sizing: border-box;
+    margin: 10px 0;
+}
+.entrada-talles{
+    pointer-events: none;
+}
+@media(max-width: 1024px){
+    .formulario-edicion{
+        font-size: 0.9em;
+    }
+    .botones-edicion{
+        width: 55%;
+    }
+}
+@media(max-width: 853px){
+    .buscar{
+        width: 40%;
+    }
+    .formulario-edicion{
+        font-size: 0.7em;
+        width: 90%;
+    }
+}
+@media(max-width: 768px){
+    .formulario-edicion{
+        font-size: 0.6em;
+    }
+}
+@media(max-width: 768px){
+    .buscar{
+        width: 50%;
+    }
+    .contenedor-de-entradas-etiquetas{
+        flex-direction: column;
+    }
+    .partes-cargar-productos{
+        width: 100%;
+    }
+    .formulario-edicion{
+        font-size: 0.8em;
+    }
+}

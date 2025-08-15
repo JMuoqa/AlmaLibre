@@ -1,0 +1,19 @@
+.guia{
+    width: 60%;
+    margin: auto;
+}
+.lista-formas-entrega, .lista-como-comprar{
+    padding: 0;
+}
+@media(max-width: 1024px){
+    .guia{
+        width: 70%;
+        margin: auto;
+    }
+}
+@media(max-width: 540px){
+    .guia{
+        width: 80%;
+        margin: auto;
+    }
+}

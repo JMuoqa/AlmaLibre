@@ -1,0 +1,79 @@
+.conjunto{
+    border-radius: 5px;
+    margin: 0;
+}
+.ultimo-formulario{
+    width: 50%;
+    margin: auto;
+}
+.etiqueta{
+    font-weight: 500;
+    margin: 1em 0;
+}
+.etiqueta, .entrada{
+    margin: 0.5em 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+.legend{
+    margin: 1.2em 0;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 700;
+}
+.datos-del-cliente{
+    display: flex;
+    flex-direction: column;
+}
+.boton{
+    font-size: inherit;
+    font-family: inherit;
+    margin-top: 1em;
+    cursor: pointer;
+    border:none;
+    background-color: var(--color-blanco);
+    color: var(--color-negro);
+    padding: 0.5em 1em;
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.boton:hover{
+    font-weight: 600;
+}
+.forma-de-entrega{
+    display: flex;
+    flex-direction: column;
+    border:none;
+    padding: 0;
+}
+.checkbutton{
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 7px;
+    background-color: var(--color-blanco);
+    border: solid 2px var(--color-negro);
+    border-radius: 5px;
+    cursor: pointer;
+}
+#transferencia{
+    margin-bottom: 3em;
+}
+@media(max-width: 1024px){
+    .ultimo-formulario{
+        width: 60%;
+        margin: auto;
+    }
+}
+@media(max-width: 540px){
+    .ultimo-formulario{
+        width: 75%;
+        margin: auto;
+    }
+}
+@media(max-width: 412px){
+    .ultimo-formulario{
+        width: 85%;
+        margin: auto;
+    }
+}

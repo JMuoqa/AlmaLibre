@@ -1,0 +1,34 @@
+.seccion-contacto{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.texto-contacto, .subtitulo-contacto, .titulo-contacto{
+    margin-bottom: 1em;
+    display: inline-block;
+}
+.link-contacto{
+    color: var(--color-negro);
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    border: solid 2px var(--color-negro);
+}
+.link-contacto:link{
+    color: var(--color-negro);
+}
+.link-contacto:visited{
+    color: var(--color-negro);
+}
+@media(max-width: 768px) {
+    .seccion-contacto{
+        width: 70%;
+    }
+}
+@media(max-width: 540px) {
+    .seccion-contacto{
+        width: 85%;
+    }
+}

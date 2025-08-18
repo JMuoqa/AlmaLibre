@@ -34,7 +34,7 @@ main{
 }
 .encabezado{
     height: var(--tamaño-altura-menu);
-    border-bottom: solid var(--ancho-borde-menu) var(--color-letra-principal);
+    border-bottom: solid var(--ancho-borde-menu) var(--color-bordes-principales);
     position: relative;
     padding: 10px 0;
     background-color: var(--color-fondo-principal);
@@ -103,8 +103,8 @@ main{
     max-height: 22em; 
     opacity: 1;
     padding-top: 5px;
+    border: solid 0.5px var(--color-bordes-principales);
     padding-bottom: 5px;
-    border: solid 0.5px var(--color-letra-principal);
     border-bottom: none;
 }
 .lista-navegador li:hover .divisor-navegador-blanco{
@@ -212,6 +212,7 @@ main{
 }
 .titulo-menu-secundario{
     font-size: var(--tamaño-letra-titulo-menu);
+    color: var(--color-letra-principal);
     font-family: "DancingScript";
     margin: 0;
     width: 100%;
@@ -264,7 +265,7 @@ main{
     right: 0.5em;
 }
 .pie-de-pagina{
-    border-top: solid 2px var(--color-letra-principal);
+    border-top: solid 2px var(--color-bordes-principales);
     min-height: var(--tamaño-altura-pie);
     background-color: var(--color-fondo-principal);
     color: var(--color-letra-principal);
@@ -303,6 +304,7 @@ main{
     display: block;
 }
 .saludo{
+    color: var(--color-letra-principal);
     display: inline-block;
     position: absolute;
     right: 0.5em;
@@ -408,8 +410,8 @@ main{
     border:none;
     font-size: inherit;
     background-color: var(--color-fondo-principal);
-    color: var(--color-negro);
-    border: solid 2px var(--color-negro);
+    color: var(--color-letra-principal);
+    border: solid 2px var(--color-bordes-principales);
     border-radius: 5px;
     padding: 5px 10px;
     width: 100%;
@@ -427,7 +429,7 @@ main{
     color: var(--color-letra-principal);
     padding: 10px 20px;
     outline: none;
-    border: solid 2px var(--color-letra-principal);
+    border: solid 2px var(--color-bordes-principales);
     border-radius: 5px;
     transition: background-color 0.3s ease;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
@@ -470,6 +472,7 @@ main{
 }
 .detalles-del-carrito{
     margin: 0;
+    color: var(--color-letra-principal);
 }
 .valores-detalles-del-carrito{
     margin-left: 1em;
@@ -485,22 +488,15 @@ main{
     padding: 0;
     text-align: center;
 }
-.divisor-navegador-blanco{
+.divisor-navegador{
     display: none;
-    background-color: var(--color-blanco);
-    width: 80%;
-    margin: auto;
-    height: 2px;
-}
-.divisor-navegador-gris{
-    display: none;
-    background-color: var(--color-gris);
+    background-color: var(--letra-principal-clara);
     width: 80%;
     height: 2px;
     margin: auto;
 }
-.divisor-navegador-gris-visible{
-    background-color: var(--color-gris);
+.divisor-navegador-visible{
+    background-color: var(--letra-principal-clara);
     width: 80%;
     height: 2px;
     margin: auto;
@@ -537,12 +533,8 @@ main{
         width: 90%;
         left: 1em;
         margin: auto;
-        background-color: var(--color-blanco);
     }
-    .divisor-navegador-blanco{
-        display: block;
-    }
-    .divisor-navegador-gris{
+    .divisor-navegador{
         display: block;
     }
     .contenedor-prendas-carrito{

@@ -68,6 +68,9 @@ const Inicio = async (req, res) => {
         PrecioOrignal: ConseguirFormatoDelPrecioOriginal,
         ControlDelUsuario: ControlarQueElUsuarioExista,
         Dias: DiferenciaEnDIas,
+        TITULO: 'AlmaLibre',
+        TEL1: '351 672 1208',
+        TEL2: '351 730 2607'
     });
 }
 const PrendasPorUnidad = async (req, res) => {
@@ -78,6 +81,7 @@ const PrendasPorUnidad = async (req, res) => {
     if(prendasSeleccionadas == false || prendasSeleccionadas == undefined){
         prendasSeleccionadas = [];
     }
+    console.log(prendasSeleccionadas);
     let accionesRecientes = '';
     if(numeroDePrenda.length==0){
         return Error(req, res);
@@ -104,6 +108,9 @@ const PrendasPorUnidad = async (req, res) => {
         FormatoDelPrecio: ConseguirFormatoDelPrecio,
         PrecioOrignal: ConseguirFormatoDelPrecioOriginal,
         ControlDelUsuario: ControlarQueElUsuarioExista,
+        TITULO: `Ver prenda - ${infoDePrenda[0].Nombre}`,
+        TEL1: '351 672 1208',
+        TEL2: '351 730 2607'
     });
 }
 const Autenticacion = async (req, res) =>{
@@ -137,6 +144,9 @@ const Autenticacion = async (req, res) =>{
         DatosDeMiPerfil: Perfil['Perfil'],
         Carrito: prendasSeleccionadas,
         ControlDelUsuario: ControlarQueElUsuarioExista,
+        TITULO: `Autenticación`,
+        TEL1: '351 672 1208',
+        TEL2: '351 730 2607'
     });
 }
 const Registrase = async (req, res) =>{
@@ -160,6 +170,9 @@ const Registrase = async (req, res) =>{
         Usuario: usuario,
         Carrito: prendasSeleccionadas,
         ControlDelUsuario: ControlarQueElUsuarioExista,
+        TITULO: `Registrarse`,
+        TEL1: '351 672 1208',
+        TEL2: '351 730 2607'
     });
 }
 const CargarProductos = async (req, res) =>{
@@ -184,6 +197,9 @@ const CargarProductos = async (req, res) =>{
             Usuario: usuario,
             Carrito: prendasSeleccionadas,
             ControlDelUsuario: ControlarQueElUsuarioExista,
+            TITULO: `Cargar productos`,
+            TEL1: '351 672 1208',
+            TEL2: '351 730 2607'
         });
     }else{
         Inicio(req, res);
@@ -216,6 +232,9 @@ const BuscarYEditar = async (req, res) => {
             Usuario: usuario,
             Carrito: prendasSeleccionadas,
             ControlDelUsuario: ControlarQueElUsuarioExista,
+            TITULO: `Buscar y editar`,
+            TEL1: '351 672 1208',
+            TEL2: '351 730 2607'
         });
     }else{
         Inicio(req, res);
@@ -241,6 +260,9 @@ const PrevioWhatsApp = async (req, res) => {
         Usuario: usuario,
         Carrito: prendasSeleccionadas,
         ControlDelUsuario: ControlarQueElUsuarioExista,
+        TITULO: `Pedir`,
+        TEL1: '351 672 1208',
+        TEL2: '351 730 2607'
     });
 }
 const VerPrendas = async (req, res) => {
@@ -295,6 +317,9 @@ const VerPrendas = async (req, res) => {
         FormatoDelPrecio: ConseguirFormatoDelPrecio,
         PrecioOrignal: ConseguirFormatoDelPrecioOriginal,
         Dias: DiferenciaEnDIas,
+        TITULO: `Ver prendas - ${genero} - ${tipo}`,
+        TEL1: '351 672 1208',
+        TEL2: '351 730 2607'
     });
 }
 const VerPromos = async (req, res) =>{
@@ -347,6 +372,9 @@ const VerPromos = async (req, res) =>{
         FormatoDelPrecio: ConseguirFormatoDelPrecio,
         PrecioOrignal: ConseguirFormatoDelPrecioOriginal,
         Dias: DiferenciaEnDIas,
+        TITULO: `Ver promos - ${genero} - ${tipo}`,
+        TEL1: '351 672 1208',
+        TEL2: '351 730 2607'
     });
 }
 const Guia = async (req, res) => {
@@ -369,6 +397,9 @@ const Guia = async (req, res) => {
         Usuario: usuario,
         Carrito: prendasSeleccionadas,
         ControlDelUsuario: ControlarQueElUsuarioExista,
+        TITULO: `Guia`,
+        TEL1: '351 672 1208',
+        TEL2: '351 730 2607'
     });
 }
 const Contacto = async (req, res) => {
@@ -391,6 +422,9 @@ const Contacto = async (req, res) => {
         Usuario: usuario,
         Carrito: prendasSeleccionadas,
         ControlDelUsuario: ControlarQueElUsuarioExista,
+        TITULO: `Contacto`,
+        TEL1: '351 672 1208',
+        TEL2: '351 730 2607'
     });
 }
 const Error = async (req, res) =>{
@@ -415,6 +449,9 @@ const Error = async (req, res) =>{
         Usuario: usuario,
         Carrito: prendasSeleccionadas,
         ControlDelUsuario: ControlarQueElUsuarioExista,
+        TITULO: `ERROR`,
+        TEL1: '351 672 1208',
+        TEL2: '351 730 2607'
     });
 }
 function DiferenciaEnDIas(FechaRegistrada){

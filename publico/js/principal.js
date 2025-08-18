@@ -124,7 +124,7 @@ function ObtenerElementosDelCarro(){
         const listadoDeMiCarrito = document.getElementById('listadoDeMiCarrito');
         if(!respuesta['Carrito'] || respuesta['Carrito'].length == 0){
             listadoDeMiCarrito.innerHTML = '';
-            listadoDeMiCarrito.innerHTML = '<p class="texto-centrado">Vacio</p>';
+            listadoDeMiCarrito.innerHTML = '<p class="texto-centrado" style="color: var(--color-letra-principal);">Vacio</p>';
         }else{
             listadoDeMiCarrito.innerHTML = '';
         }

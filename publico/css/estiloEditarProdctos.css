@@ -312,6 +312,10 @@ fieldset {
 .entrada-talles{
     pointer-events: none;
 }
+.texto-editar{
+    display: inline-block;
+    width: 100%;
+}
 @media(max-width: 1024px){
     .formulario-edicion{
         font-size: 0.9em;

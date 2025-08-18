@@ -1,6 +1,9 @@
 :root {
     --color-negro: #000;
-    --color-letra-principal: #333;
+    --color-letra-principal: #f9f9f9;
+    --letra-principal-clara: #fff;
+    --letra-principal-oscura: #333;
+    --color-bordes-principales: #333;
     --color-blanco: #ffffff;
     --color-gris: #999;
     --color-rojo: #f00;
@@ -9,9 +12,10 @@
     --color-naranja-brillante: #f50;
     --color-blanco-transparente: #fefefef9;
     --color-marron-principal: #4E260F;
-    --color-fondo-principal: #FEE5D9;
-    --color-fondo-principal-oscuro: #fbbca7;
-    --color-fondo-principal-transparente: #FEE5D9f9;
+    --color-fondo-principal: #8a5afe; /*#FEE5D9 #8b58fe #8a5afe #8074f8 #6A3DF5 #A63DF5 #b663f5 #8270fa*/
+    --color-fondo-porducto: #8a5afe;
+    --color-fondo-principal-oscuro: #794fdb;
+    --color-fondo-principal-transparente: #8a5afef9;
     --color-del-titulo: #000;
     --tamaño-letra-pagina: 20px; /* Letra de la pagina */
     --tamaño-letra-menu: 1.25em;
@@ -112,7 +116,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--color-letra-principal); 
+    color: var(--letra-principal-oscura); 
 }
 .precio-producto {
     font-size: 1.4em;
@@ -122,7 +126,7 @@
     margin-bottom: 0;
     text-align: center;
     cursor: pointer;
-    color: var(--color-letra-principal); 
+    color: var(--letra-principal-oscura); 
 }
 .texto-de-descripcion{
     display: -webkit-box;
@@ -133,7 +137,7 @@
     margin:auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    color: var(--color-letra-principal); 
+    color: var(--letra-principal-oscura); 
 }
 .precio-sin-descuento {
     text-decoration: line-through;
@@ -165,7 +169,7 @@
     border: none;
     color: var(--color-letra-principal);
     transition: background-color 0.3s ease;
-    border: solid 2px var(--color-letra-principal);
+    border: solid 2px var(--color-bordes-principales);
     border-radius: 5px;
     position: relative;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);

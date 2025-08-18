@@ -108,7 +108,7 @@ function RealizarBusqueda(){
                 cadenaDeTexto += ',00';
                 html += `<p class="precio-producto">${cadenaDeTexto}</p>`;
                 html += `<input type="hidden" name="_ID" value="${respuesta['Ropa'][i].id}">`;
-                html += `<strong class="texto-centrado texto-ver-prenda">Editar prenda</strong>`
+                html += `<strong class="texto-centrado texto-editar">Editar prenda</strong>`
                 html += `</article>`;
                 contenedor.innerHTML += html;
             }

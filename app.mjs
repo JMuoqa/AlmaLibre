@@ -17,11 +17,10 @@ const secreto = crypto.randomBytes(32).toString('hex');
 // Define __nombreDelArchivo manualmentes
 const __nombreDelArchivo = fileURLToPath(import.meta.url); // Obtiene el archivo actual
 const __nombreDelDirectorio = path.dirname(__nombreDelArchivo);       // Obtiene el directorio actual
-console.log(path.join(__nombreDelDirectorio, 'vistas'))
 app.set('view engine', 'ejs');
 app.set('views', path.join(__nombreDelDirectorio, 'vistas'));
 app.use(express.static(path.join(__nombreDelDirectorio, 'publico')));
-app.use(expressLayouts); // Es para usar una vista en comun, como el RenderBody() en c# .net
+app.use(expressLayouts);
 app.use(cookieParser(secreto));
 app.use(express.json()); // para JSON
 app.use(express.urlencoded({ extended: true })); // para datos de formulario

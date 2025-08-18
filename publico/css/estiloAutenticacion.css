@@ -1,6 +1,7 @@
 .titulo-mi-perfil{
     width: 100%;
     text-align: center;
+    color: var(--letra-principal-oscura);
 }
 .contenedor-contenedor{
     display: flex;

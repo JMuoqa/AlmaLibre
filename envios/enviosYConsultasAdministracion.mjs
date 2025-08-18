@@ -44,7 +44,7 @@ async function CargarRopa(
 async function ModificarDato(Dato, Columna, ID){
     const conexion = await Conexion();
     try{
-        const columnasPermitidas = ['Nombre', 'Precio', 'Tipo', 'Genero', 'Cantidad', 'Descuento', 'Descripcion'];
+        const columnasPermitidas = ['Nombre', 'Precio', 'Tipo', 'Genero', 'Cantidad', 'Descuento', 'Descripcion', 'ImagenSeleccionada'];
         if(!columnasPermitidas.includes(Columna) || !/^[1-9]+$/.test(ID)){
             return {estadoDeSolicitud: 'malo', mensajeDeError: 'Hay datos erroneos'};
         }

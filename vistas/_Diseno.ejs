@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alma Libre</title>
-    <link rel="icon" href="/imagenes_carpeta/DisenoPrincipal/IconoAlmaLibre2.png" type="image/png">
+    <title><%= TITULO %></title> <!--AGREGAR PARA QE SALGA EL TITULO-->
+    <link rel="icon" href="/imagenes_carpeta/DisenoPrincipal/LogoAlmaLibre.jpg" type="image/png">
     <link rel="stylesheet" href="/css/estiloGlobal.css">
     <link rel="stylesheet" href="/css/fuentes.css">
     <link rel="stylesheet" href="/css/estiloPrincipal.css">
@@ -29,16 +29,16 @@
                 <li class="item-lista-menu-secundario">
                     <a class="link-lista-menu-secundario" href="<%= UrlCargarProductos %>">Cargar productos</a>
                 </li>
-                <div class="divisor-navegador-gris-visible"></div>
+                <div class="divisor-navegador-visible"></div>
                 <li class="item-lista-menu-secundario">
                     <a class="link-lista-menu-secundario" href="<%= UrlBuscarYEditar %>">Buscar y editar</a>
                 </li>
-                <div class="divisor-navegador-gris-visible"></div>
+                <div class="divisor-navegador-visible"></div>
                 <% } %>
                 <li class="item-lista-menu-secundario">
-                    <a class="link-lista-menu-secundario" href="/">Mi carrito.</a>
+                    <a class="link-lista-menu-secundario" href="/previo-whatsApp">Mi carrito.</a>
                 </li>
-                <div class="divisor-navegador-gris-visible"></div>
+                <div class="divisor-navegador-visible"></div>
             </ul>
         </section>
     </dialog>
@@ -68,7 +68,7 @@
         </section>
     </dialog>
     <header class="encabezado">
-        <img class="imagen-menu-secundario" src="/imagenes_carpeta/DisenoPrincipal/menuIzq2.png" id="imagenMenuSecundario">
+        <img class="imagen-menu-secundario" src="/imagenes_carpeta/DisenoPrincipal/menuBlanco.png" id="imagenMenuSecundario">
         <nav class="navegador" id="navegador">
             <h1 class="titulo" id="titulo" >Alma libre</h1> 
             <ul class="lista-navegador" id="listaDelNavegador">
@@ -107,7 +107,7 @@
                         </li>
                     </ul>
                 </li>
-                <div class="divisor-navegador-gris"></div>
+                <div class="divisor-navegador"></div>
                 <li class="items-lista-navegador">
                     <a class="links links-lista-navegador cursor-puntero">Niños/as</a>
                     <ul class="sublista lista-mujer">
@@ -143,30 +143,30 @@
                         </li>
                     </ul>
                 </li>
-                <div class="divisor-navegador-gris"></div>
+                <div class="divisor-navegador"></div>
                 <li class="items-lista-navegador">
                     <a class="links links-lista-navegador" href="/ayuda">Ayuda</a>
                 </li>
-                <div class="divisor-navegador-gris"></div>
+                <div class="divisor-navegador"></div>
                 <li class="items-lista-navegador">
                     <a class="links links-lista-navegador" href="/contacto">Contáctanos</a>
                 </li>
-                <div class="divisor-navegador-gris"></div>
+                <div class="divisor-navegador"></div>
                 <li class="items-lista-navegador">
                     <a class="links links-lista-navegador" href="<%= UrlMiPerfil %>">Mi perfil</a>
                 </li>
-                <div class="divisor-navegador-gris"></div>
+                <div class="divisor-navegador"></div>
             </ul>
         </nav>
         <% if(ControlDelUsuario(Usuario)) { %> 
-            <img class="imagen-iniciar-sesion" id="imagenIniciarSesion" src="/imagenes_carpeta/DisenoPrincipal/IniciarSesion2.png">
+            <img class="imagen-iniciar-sesion" id="imagenIniciarSesion" src="/imagenes_carpeta/DisenoPrincipal/personaBlanco.png">
         <% } else{ %>
-            <img class="imagen-iniciar-sesion" id="imagenSalir" src="/imagenes_carpeta/DisenoPrincipal/exit.png">
+            <img class="imagen-iniciar-sesion" id="imagenSalir" src="/imagenes_carpeta/DisenoPrincipal/logoutBlanco.png">
             <p class="saludo">Hola <%= Usuario %>!</p>
         <% } %>
         <div class="contenedor-carrito">
             <p class="numero-items" id="cantidadDePrendasEnElCarrito"><%= Carrito.length %></p>
-            <img class="imagen-carrito" id="imagenCarrito" src="/imagenes_carpeta/DisenoPrincipal/carritoCalidad2.png">
+            <img class="imagen-carrito" id="imagenCarrito" src="/imagenes_carpeta/DisenoPrincipal/carritoBlanco.png">
         </div>
     </header>
     <main>

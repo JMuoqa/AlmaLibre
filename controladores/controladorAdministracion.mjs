@@ -254,16 +254,42 @@ function ComprobarTalles(IDColor, IDPrenda, color, tallesExistentes){
 const CambiarImagenes = async (req, res) =>{
     try{
         const imagenes = req.files;
+        if (!imagenes || imagenes.length === 0) {
+            return res.status(400).json({estadoDeSolicitud: 'malo', mensajeDeError: 'No hay imagenes cargadas'});
+        }
+        const imagenesProcesadas = [];
+        for(const file of imagenes){
+            const rutaOriginal = path.join(rutaDeLaCarpeta, file.filename);
+            const extencion = path.extname(file.originalname).toLowerCase();
+            if(extencion == '.heic'){
+                //En esta parte convierto las imagenes que son .heic
+                //El convert convierte la imagen y el sharp la guarda
+                //A el convert no se le puede pasar una ruta, primero se tiene que leer el archivo con fs.readFileSync(la ruta del archivo);
+                const nuevoNombre = file.filename.replace(/\.heic$/i,'.jpg');
+                const nuevaRuta = path.join(rutaDeLaCarpeta, nuevoNombre);
+                const bufferDeEntrada = fs.readFileSync(rutaOriginal); // esto lee el archivo por que convert(heic-convert), no lee el archivo pasandole la ruta.
+                const jpegBuffer = await convert({
+                    buffer: bufferDeEntrada,  // buffer de entrada
+                    format: 'JPEG',       // formato de salida
+                    quality: 0.9          // calidad jpeg
+                });
+                await sharp(jpegBuffer).jpeg({ quality: 90 }).toFile(nuevaRuta); //Guarda la nueva imagen
+                fs.unlinkSync(rutaOriginal);//Esto borra la imagen .heic que se subio.
+                imagenesProcesadas.push(nuevoNombre);
+            }else{
+                imagenesProcesadas.push(file.filename);
+            }
+        }
         const { Id, ImagenSeleccionada } = req.body;
         if (!imagenes || imagenes.length === 0) {
             return res.status(400).json({estadoDeSolicitud: 'malo', mensajeDeError: 'No hay imagenes cargadas'});
         }
         let nombresDeLasImagenes = '';
-        imagenes.forEach((imagen) => {
+        imagenesProcesadas.forEach((imagen) => {
             if(nombresDeLasImagenes.length == 0)
-                nombresDeLasImagenes += imagen.filename;
+                nombresDeLasImagenes += imagen;
             else
-                nombresDeLasImagenes += `,${imagen.filename}`;
+                nombresDeLasImagenes += `,${imagen}`;
         });
         if(!/^[a-zA-Z0-9.,-]+$/.test(nombresDeLasImagenes) && /^[A-Z,-]+$/.test(tallesDisponibles)){
             return res.status(400).json({ estadoDeSolicitud: 'malo', mensajeDeError: 'Hay un problema con los nombres de los datos enviados'});

@@ -22,7 +22,7 @@ main{
     margin: 0;
     padding-right: 10px;
     cursor: pointer;
-    color: var(--color-letra-principal);
+    color: var(--color-blanco);
     user-select: none;
 }
 .lista-navegador{
@@ -86,26 +86,12 @@ main{
     transition: max-height 0.3s ease-out, opacity 0.3s ease, padding 0.3s ease;
     z-index: 10;
 }
-.sublista::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 4px;
-    width: 100%;
-    background-color: var(--color-negro);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .6s ease;
-    z-index: 10;
-}
 .lista-navegador li:hover .sublista{
     max-height: 22em; 
     opacity: 1;
     padding-top: 5px;
     border: solid 0.5px var(--color-bordes-principales);
     padding-bottom: 5px;
-    border-bottom: none;
 }
 .lista-navegador li:hover .divisor-navegador-blanco{
     display: none;
@@ -242,10 +228,10 @@ main{
     text-decoration: none;
 }
 .link-lista-menu-secundario:link{
-    color: var(--color-letra-principal);
+    color: var(--letra-principal-clara);
 }
 .link-lista-menu-secundario:visited{
-    color: var(--color-letra-principal);
+    color: var(--letra-principal-clara);
 }
 .link-lista-menu-secundario:hover{
     font-weight: 600;
@@ -505,6 +491,12 @@ main{
     width: 2em;
     height: 2em;
     border-radius: 2px;
+}
+.link-lista-menu-secundario-claro:visited{
+    color: var(--letra-principal-oscura)
+}
+.link-lista-menu-secundario-claro:link{
+    color: var(--letra-principal-oscura)
 }
 @media(max-width: 1280px){
     .titulo{

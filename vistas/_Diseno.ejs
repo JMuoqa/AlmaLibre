@@ -14,8 +14,8 @@
                 <article class="menu-terceario">
                     <img class="cerrar-menu" id="cerrarMenu2" src="/imagenes_carpeta/DisenoPrincipal/cerrar.png" loading="lazy">
                     <h2 class="titutlo-mensaje-exitoso"><%= Aviso %></h2>
-                    <a class="item-lista-menu-secundario link-lista-menu-secundario" href="/">Inicio</a>
-                    <a class="item-lista-menu-secundario link-lista-menu-secundario" href="<%= UrlMiPerfil %>">Mi cuenta</a>
+                    <a class="item-lista-menu-secundario link-lista-menu-secundario link-lista-menu-secundario-claro" href="/">Inicio</a>
+                    <a class="item-lista-menu-secundario link-lista-menu-secundario link-lista-menu-secundario-claro" href="<%= UrlMiPerfil %>">Mi cuenta</a>
                 </article>
             </div>
         </dialog> <%
@@ -27,16 +27,16 @@
             <ul class="lista-menu-secundario">
                 <% if(Jerarquia == 0){ %>
                 <li class="item-lista-menu-secundario">
-                    <a class="link-lista-menu-secundario" href="<%= UrlCargarProductos %>">Cargar productos</a>
+                    <a class="link-lista-menu-secundario texto-claro" href="<%= UrlCargarProductos %>">Cargar productos</a>
                 </li>
                 <div class="divisor-navegador-visible"></div>
                 <li class="item-lista-menu-secundario">
-                    <a class="link-lista-menu-secundario" href="<%= UrlBuscarYEditar %>">Buscar y editar</a>
+                    <a class="link-lista-menu-secundario texto-claro" href="<%= UrlBuscarYEditar %>">Buscar y editar</a>
                 </li>
                 <div class="divisor-navegador-visible"></div>
                 <% } %>
                 <li class="item-lista-menu-secundario">
-                    <a class="link-lista-menu-secundario" href="/previo-whatsApp">Mi carrito.</a>
+                    <a class="link-lista-menu-secundario texto-claro" href="/previo-whatsApp">Mi carrito.</a>
                 </li>
                 <div class="divisor-navegador-visible"></div>
             </ul>

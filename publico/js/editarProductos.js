@@ -1,9 +1,9 @@
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', async function(){
     ActivacionDeLasCajas();
     EventosDeLasCajas();
     VerificarDescuento();
     CambiarOpcionDeDescuento();
-    MostrarGaleriaDeImagenes();
+    await MostrarGaleriaDeImagenes();
     RealizarBusqueda();
     BorrarDatos();
     CambiarDatos();
@@ -860,7 +860,7 @@ function CambiarOpcionDeDescuento(){
         }
     });
 }
-function MostrarGaleriaDeImagenes(){//Hecho CON CHATGPT
+async function MostrarGaleriaDeImagenes(){//Hecho CON CHATGPT
     const entrada = document.getElementById('entradaImagenes');
     const imagenes = document.getElementById('imagenesRopa');
     const btnAnterior = document.getElementById('btnAnterior');
@@ -870,8 +870,28 @@ function MostrarGaleriaDeImagenes(){//Hecho CON CHATGPT
     let indiceActual = 0;
 
 
-    entrada.addEventListener('change', function(event){
-        const archivos = Array.from(event.target.files); // Se convierte el objeto FileList en un array real
+    entrada.addEventListener('change', async function(event){
+        const archivosHeic = Array.from(event.target.files); // Se convierte el objeto FileList en un array real
+        const archivos = [];
+        for(const file of archivosHeic){
+            if(file && file.type === 'image/heic' || file.name.toLowerCase().endsWith('.heic')){ 
+                //En teoria no es necesario poner file.name, esto es solo cuando se cambia la extencion y no el tipo de la imagen
+                try {
+                    const convertedBlob = await heic2any({ //HEIC2ANY sirve para convertir heic2any a jpg
+                        blob: file,
+                        toType: "image/jpeg",
+                        quality: 0.9
+                    });
+                    // Crear objeto File para que tenga type y name correctos
+                    const convertedFile = new File([convertedBlob], file.name.replace(/\.heic$/i, '.jpg'), { type: "image/jpeg" });
+                    archivos.push(convertedFile);
+                } catch (err) {
+                    console.error("Error convirtiendo HEIC:", err);
+                }
+            }else{
+                archivos.push(file);
+            }
+        }
         imagenesBase64 = []; //Estas dos variables se reinician de vuelta cada vez que se ejecuta el evento change
         indiceActual = 0;
         if(archivos.length > 0){

@@ -1,9 +1,9 @@
 :root {
     --color-negro: #000;
-    --color-letra-principal: #f9f9f9;
-    --letra-principal-clara: #fff;
-    --letra-principal-oscura: #333;
-    --color-bordes-principales: #333;
+    --color-letra-principal: #dcdcdc;
+    --letra-principal-clara: #dcdcdc;
+    --letra-principal-oscura: #111111;
+    --color-bordes-principales: #5a2ebd;
     --color-blanco: #ffffff;
     --color-gris: #999;
     --color-rojo: #f00;
@@ -37,6 +37,15 @@
 }
 * {
   scrollbar-color: #ccc var(--color-fondo-principal);
+}
+.texto-claro{
+    color: var(--letra-principal-clara);
+}
+.texto-oscuro{
+    color: var(--letra-principal-oscura);
+}
+.columnas{
+    color: var(--letra-principal-oscura);
 }
 .texto-centrado {
     width: 100%;

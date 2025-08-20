@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/css/estiloVerPrenda.css">
 <section class="ver-producto">
-    <h2 class="texto-centrado">Ver prenda</h2>
+    <h2 class="texto-centrado texto-oscuro">Ver prenda</h2>
     <section class="conedor-principal">
         <div class="separador-contenedor-principal">
             <section class="contenedor-producto-img">
@@ -21,23 +21,23 @@
                 let Precio = PrecioOrignal(DatosDeLaPrenda[0].Precio);
             %>
         <section class="contenedor-producto-detalles">
-            <h3 class="texto-seccion-ver-prenda"><%= DatosDeLaPrenda[0].Nombre %></h3>
+            <h3 class="texto-seccion-ver-prenda texto-oscuro"><%= DatosDeLaPrenda[0].Nombre %></h3>
             <section class="contenedor-precio-seccion-ver-prenda">
                 <% if(DatosDeLaPrenda[0].Descuento>0){ %>
                     <p class="precio-sin-descuento-seccion-ver-prenda">Precio: <%= Precio %></p>
                 <% } %>
                 <div class="contenedor-precio-calculado">
-                    <h4 class="texto-seccion-ver-prenda">Precio:</h4>
-                    <p class="precio-producto-seccion-ver-prenda"><%= precioConDescento %></p>
+                    <h4 class="texto-seccion-ver-prenda texto-oscuro">Precio:</h4>
+                    <p class="precio-producto-seccion-ver-prenda texto-oscuro"><%= precioConDescento %></p>
                 </div>
             </section>
             <section>
-                <h4 class="texto-seccion-ver-prenda">Descripción</h4>
-                <p class="texto-seccion-ver-prenda texto-seccion-ver-prenda-block texto-seccion-ver-prenda-descripcion"> <%= DatosDeLaPrenda[0].Descripcion %></p>
+                <h4 class="texto-seccion-ver-prenda texto-oscuro">Descripción</h4>
+                <p class="texto-seccion-ver-prenda texto-seccion-ver-prenda-block texto-seccion-ver-prenda-descripcion texto-oscuro"> <%= DatosDeLaPrenda[0].Descripcion %></p>
             </section>
             <section class="detalles-de-la-prenda">
-                <h4 class="texto-seccion-ver-prenda">Categoría:</h4>
-                <p class="texto-seccion-ver-prenda texto-seccion-ver-prenda-block"><%= DatosDeLaPrenda[0].Tipo %> | <%= DatosDeLaPrenda[0].Genero %></p>
+                <h4 class="texto-seccion-ver-prenda texto-oscuro">Categoría:</h4>
+                <p class="texto-seccion-ver-prenda texto-seccion-ver-prenda-block texto-oscuro"><%= DatosDeLaPrenda[0].Tipo %> | <%= DatosDeLaPrenda[0].Genero %></p>
             </section>
             <input type="hidden" id="idDeLaPrenda" value="<%= DatosDeLaPrenda[0].id %>">
             <input type="hidden" id="nombreDeLaPrenda" value="<%= DatosDeLaPrenda[0].Nombre %>">
@@ -54,8 +54,8 @@
             </section>
             <section class="contenedor-info-a-sumar">
                 <div class="contenedor-prendas-a-sumar">
-                    <div class="texto-prendas-a-sumar prendas-a-sumar"><p class="detalles-prendas-a-sumar detalles-prendas-a-sumar-fijos">Prendas: </p><p class="detalles-prendas-a-sumar" id="PrendasASumar">0</p></div>
-                    <div class="texto-prendas-a-sumar precio-de-prendas-a-sumar"><p class="detalles-prendas-a-sumar detalles-prendas-a-sumar-fijos">Precio: </p><p class="detalles-prendas-a-sumar" id="precioDePrendasASumar">$0,00</p></div>
+                    <div class="texto-prendas-a-sumar prendas-a-sumar"><p class="detalles-prendas-a-sumar detalles-prendas-a-sumar-fijos texto-oscuro">Prendas: </p><p class="detalles-prendas-a-sumar texto-oscuro" id="PrendasASumar">0</p></div>
+                    <div class="texto-prendas-a-sumar precio-de-prendas-a-sumar"><p class="detalles-prendas-a-sumar detalles-prendas-a-sumar-fijos texto-oscuro">Precio: </p><p class="detalles-prendas-a-sumar texto-oscuro" id="precioDePrendasASumar">$0,00</p></div>
                 </div>
                 <button class="botones" id="añadirAlCarrito">Añadir al carrito</button>
             </section>

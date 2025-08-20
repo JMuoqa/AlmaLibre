@@ -74,7 +74,9 @@ enrutador.get('/buscar', controladorAdministracion.ObtenerBusqueda);
 enrutador.get('/obtener-talles-colores', controladorAdministracion.AD_ObtenerTallesColores);
 enrutador.post('/cambiar-cantidad', controladorAdministracion.CambiarCantiadDeLosTalles);
 enrutador.post('/cambiar-dato', controladorAdministracion.CambiarDato);
-enrutador.post('/cambiar-imagenes', subir.array('Imagenes', 10), controladorAdministracion.CambiarImagenes);
+enrutador.post('/cambiar-imagenes', subir.array('Imagenes', 10), (req, res)=>{
+    controladorAdministracion.CambiarImagenes(req, res);
+});
 enrutador.post('/cambiar-estado-mostrar', controladorAdministracion.CambiarEstadoMostrar);
 enrutador.post('/guardar-colores', controladorAdministracion.AgregarColor);
 export default enrutador;
